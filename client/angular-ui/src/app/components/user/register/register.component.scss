@@ -1,0 +1,46 @@
+.register-form {
+    background-color: #2e3136;
+    color: white;
+    padding: 0px;
+    border-radius: 5px;
+    font-size: small;
+    color: #9b9ea7;
+    .heading {
+        background-color: #454955;
+        color: #9b9ea7;
+        text-align: center;
+        border-radius: inherit;
+        padding: 8px 0px;
+        font-size: medium;
+    }
+    .register-label {
+        font-size: small;
+        color: #9b9ea7;
+    }
+    .register-input {
+        background-color: #454955;
+        border-color: transparent;
+        color: #9b9ea7;
+        height: 30px;
+        font-size: small;
+        padding: 10px 10px;
+    }
+    .register-button {
+        height: 30px;
+        border-color: #9b9ea7;
+        color: #9b9ea7;
+        padding: 0px 10px;
+    }
+    .register-hr {
+        border-color: #9b9ea7;
+    }
+    .login {
+        .login-button {
+            height: 30px;
+            border-color: #9b9ea7;
+            color: #9b9ea7;
+            padding: 0px 10px;
+            margin-bottom: 16px;
+        }
+    }
+}
