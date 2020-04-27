@@ -1,31 +1,70 @@
-<div class="row">
+<div class="row register-form">
     <div class="col-md"></div>
-    <div class="col-md register-form">
-        <p class="heading">Register</p>
+    <div class="col-md-6 mt-2">
         <div class="container">
+            <p class="heading">Register</p>
             <form>
                 <div class="form-group">
                     <label for="userName" class="register-label">Username</label>
-                    <input type="text" id="userName" class="form-control register-input">
+                    <input type="text" id="userName" name="userName" [(ngModel)]="userName" #UserName="ngModel"
+                        minlength="5" required class="form-control register-input">
+                    <div *ngIf="UserName.errors" class="container small text-danger">
+                        <p *ngIf="UserName.errors?.minlength">*User name should be minimun 5 characters</p>
+                        <p *ngIf="UserName.errors?.required && UserName.touched">*Username is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="register-label">Name</label>
-                    <input type="text" id="name" class="form-control register-input">
+                    <input type="text" id="name" name="name" [(ngModel)]="name" #Name="ngModel" required
+                        class="form-control register-input">
+                    <div *ngIf="Name.errors" class="container small text-danger">
+                        <p *ngIf="Name.errors?.required && Name.touched">*Name is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="register-label">Email</label>
-                    <input type="email" id="email" class="form-control register-input">
+                    <input type="email" id="email" name="email" [(ngModel)]="email" #Email="ngModel" required
+                        [pattern]="emailPattern" class="form-control register-input">
+                    <div *ngIf="Email.errors" class="container small text-danger">
+                        <p *ngIf="Email.errors?.required && Email.touched">*Email is required</p>
+                        <p *ngIf="Email.errors?.pattern">*Email is not valid</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="register-label">Password</label>
-                    <input type="password" id="password" class="form-control register-input">
+                    <input type="password" id="password" name="password" [(ngModel)]="password" #Password="ngModel"
+                        required minlength="8" maxlength="16" class="form-control register-input">
+                    <div *ngIf="Password.errors" class="container small text-danger">
+                        <p *ngIf="Password.errors?.required && Password.touched">*Password required</p>
+                        <p *ngIf="Password.errors?.minlength || Password.errors?.maxlength">*Password should 8-16
+                            characters</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="confirmPassword" class="register-label">Confirm Password</label>
-                    <input type="confirmPassword" id="password" class="form-control register-input">
+                    <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword"
+                        #ConfirmPassword="ngModel" required minlength="8" maxlength="16"
+                        class="form-control register-input">
+                    <div class="container small text-danger">
+                        <p *ngIf="ConfirmPassword.errors?.required && ConfirmPassword.touched">*Confirm Password
+                            required</p>
+                        <p *ngIf="ConfirmPassword.errors?.minlength || ConfirmPassword.errors?.maxlength">*Confirm
+                            Password should 8-16 characters</p>
+                        <p
+                            *ngIf="Password.touched && ConfirmPassword.touched && Password.control.value != ConfirmPassword.control.value">
+                            *Password and Confirm password not same
+                        </p>
+                    </div>
                 </div>
-                <p><input type="checkbox"> Accept the terms and conditions</p>
-                <button class="btn register-button">Register</button>
+                <p><input type="checkbox" name="tac" [(ngModel)]="tac" #Tac="ngModel" required> Accept the terms and
+                    conditions</p>
+                <div class="container small text-danger">
+                    <p *ngIf="!Tac.control.value && Tac.touched">*Accept terms and conditions</p>
+                </div>
+                <button type="submit" class="btn register-button" (click)="registerUser()"
+                    [disabled]="UserName.errors || Name.errors || Email.errors || Password.errors || ConfirmPassword.errors || Password.control.value != ConfirmPassword.control.value || !Tac.control.value">
+                    Register
+                </button>
             </form>
             <hr class="register-hr">
             <div class="login">
