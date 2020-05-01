@@ -6,7 +6,7 @@ import { UserModule } from './modules/user/user.module';
 import { TheatersModule } from './modules/theaters/theaters.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb+srv://musicnode:0kUFUVp96EigNqAe@cluster0-ebrik.mongodb.net/ticket_booking?retryWrites=true&w=majority'),
+  imports: [MongooseModule.forRoot('mongo url'),
     UserModule,
     TheatersModule
   ],
