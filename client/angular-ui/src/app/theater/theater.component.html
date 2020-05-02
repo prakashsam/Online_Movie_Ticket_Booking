@@ -1,0 +1,21 @@
+<!-- <div *ngFor="let row of seatsRow; let i = index">
+    <div class="float-left" *ngFor="let column of seatsColumn; let j = index">
+        <input type="checkbox" >
+        {{i}}.{{j}}
+    </div>  
+</div> -->
+
+<table class="table table-responsive">
+    <tr *ngFor="let row of seatsRow; let i = index">
+        <td *ngFor="let column of seatsColumn; let j = index">
+            <input type="checkbox" [(ngModel)]="selectedLayout[i][j]" (click)="consoleLog()">
+            <!-- <input type="checkbox"> -->
+        </td>
+    </tr>
+</table>
+
+<!-- <input type="checkbox" [(ngModel)]="checkboxValue">
+{{checkboxValue}} -->
+
+
+

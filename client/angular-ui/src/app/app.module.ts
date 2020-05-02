@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './components/user/user.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoginComponent } from './components/user/login/login.component';
-import { RegisterComponent } from './components/user/register/register.component';
+import { UserComponent } from './user/user.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './user/components/login/login.component';
+import { RegisterComponent } from './user/components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalexampleComponent } from './components/modalexample/modalexample.component'
 
 //material
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { FormBuilder } from '@angular/forms';
+import { TheaterComponent } from './theater/theater.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { FormBuilder } from '@angular/forms';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ModalexampleComponent
+    TheaterComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,10 +32,10 @@ import { FormBuilder } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   entryComponents: [
-    ModalexampleComponent
   ],
   providers: [
     {provide: MatDialogModule,useValue: {}},

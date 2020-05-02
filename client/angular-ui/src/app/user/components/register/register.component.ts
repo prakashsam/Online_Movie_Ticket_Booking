@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterDto } from './../models/register.dto';
-import { RegisterService } from './../services/register.service';
+import { RegisterDto } from './../../models/register.dto';
+import { RegisterService } from './../../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
-  constructor(public registerService: RegisterService) { }
+  constructor(public registerService: RegisterService, public router: Router) { }
 
   registerUser() {
     this.register = new RegisterDto(this.userName, this.name, this.email, this.password);
@@ -33,6 +34,10 @@ export class RegisterComponent implements OnInit {
         console.log("Register API error: ", err);
       }
     )
+  }
+
+  routeLogin() {
+    this.router.navigate(['login']);
   }
 
   onkeyup(events: any) {
