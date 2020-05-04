@@ -7,35 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TheaterComponent implements OnInit {
 
-  seatsRow: any[] = [];
-  seatsColumn: any[] = [];
-
-  selectedLayout: any[][] = []
+  seatsArray: Array<any>[] = [];
 
   constructor() { }
 
-  consoleLog() {
-    console.log(this.selectedLayout);
-    
-  }
-
   ngOnInit(): void {
-    console.log("a");
-    for (let i = 0; i < 26; i++) {
-      this.seatsRow[i] = i;
-    }
-    console.log("b");
-    for (let i = 0; i < 60; i++) {
-      this.seatsColumn[i] = i;
-    }
-    console.log("c");
-    
-    for (let i = 0; i <= 61; i++) {
-      for (let j = 0; j <= 27; j++) {
-        this.selectedLayout[i][j] = false;
+    for (let index = 0; index < 5; index++) {
+      for (let indexs = 0; indexs < 5; indexs++) {
+        this.seatsArray[index][indexs] = 0;
       }
     }
-    console.log("d");
+    console.log(this.seatsArray);
   }
 
 }

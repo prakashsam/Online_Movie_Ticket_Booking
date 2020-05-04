@@ -13,9 +13,17 @@ import { RegisterComponent } from './user/components/register/register.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //material
-import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 import { FormBuilder } from '@angular/forms';
 import { TheaterComponent } from './theater/theater.component';
+import { TheaterLoginComponent } from './theater/components/theater-login/theater-login.component';
+import { TheaterRegisterComponent } from './theater/components/theater-register/theater-register.component';
+import { TheaterUpdateComponent } from './theater/components/theater-update/theater-update.component';
+import { TheaterDeleteComponent } from './theater/components/theater-delete/theater-delete.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,20 +33,25 @@ import { TheaterComponent } from './theater/theater.component';
     LoginComponent,
     RegisterComponent,
     TheaterComponent,
+    TheaterLoginComponent,
+    TheaterRegisterComponent,
+    TheaterUpdateComponent,
+    TheaterDeleteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    NgbModule
   ],
   entryComponents: [
   ],
   providers: [
-    {provide: MatDialogModule,useValue: {}},
     {provide: FormBuilder}
   ],
   bootstrap: [AppComponent]
