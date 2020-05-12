@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TheaterService } from './services/theater.service';
 
 @Component({
   selector: 'app-theater',
@@ -9,15 +10,17 @@ export class TheaterComponent implements OnInit {
 
   seatsArray: Array<any>[] = [];
 
-  constructor() { }
+  constructor( private theaterService: TheaterService) { }
 
-  ngOnInit(): void {
-    for (let index = 0; index < 5; index++) {
-      for (let indexs = 0; indexs < 5; indexs++) {
-        this.seatsArray[index][indexs] = 0;
+  ngOnInit(){
+    this.theaterService.getAllTheaters().subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (err: any) => {
+        console.log(err);
       }
-    }
-    console.log(this.seatsArray);
+    );
   }
 
 }

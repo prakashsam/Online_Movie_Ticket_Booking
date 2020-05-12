@@ -11,6 +11,6 @@ export class RegisterService {
     constructor(private http: HttpClient) {}
 
     registerUser(register: RegisterDto): any {
-        return this.http.post("http://localhost:3000/user", register);
+        return this.http.post("http://localhost:4000/user", register);
     }
 }

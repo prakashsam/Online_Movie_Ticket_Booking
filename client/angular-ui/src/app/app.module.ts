@@ -19,10 +19,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { FormBuilder } from '@angular/forms';
 import { TheaterComponent } from './theater/theater.component';
-import { TheaterLoginComponent } from './theater/components/theater-login/theater-login.component';
-import { TheaterRegisterComponent } from './theater/components/theater-register/theater-register.component';
 import { TheaterUpdateComponent } from './theater/components/theater-update/theater-update.component';
 import { TheaterDeleteComponent } from './theater/components/theater-delete/theater-delete.component';
+import { TheaterCreateComponent } from './theater/components/theater-create/theater-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -33,10 +32,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     RegisterComponent,
     TheaterComponent,
-    TheaterLoginComponent,
-    TheaterRegisterComponent,
     TheaterUpdateComponent,
-    TheaterDeleteComponent
+    TheaterDeleteComponent,
+    TheaterCreateComponent
   ],
   imports: [
     BrowserModule,
