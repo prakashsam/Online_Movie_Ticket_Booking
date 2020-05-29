@@ -1,0 +1,32 @@
+.login {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #222222;
+    color: #cccccc;
+    margin: auto;
+
+    form {
+        width: 50%;
+    }
+
+    .welcome-text {
+        font-size: larger;
+    }
+
+    label {
+        text-align: left;
+    }
+
+    input {
+        background-color: #333333;
+        border-color: transparent;
+    }
+
+    button {
+        background-color: #333333;
+        border-color: #cccccc;
+    }
+}

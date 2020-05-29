@@ -1,0 +1,58 @@
+<div>
+    <div class="container">
+        <div *ngIf='theatersAvailable' class="table-responsive-sm">
+            <table class="table table-borderless table-hover table-small">
+                <caption>List of theates</caption>
+                <tbody>
+                    <tr *ngFor='let theater of theatersInDb'>
+                        <td>{{theater.name}}</td>
+                        <td>{{theater.description}}</td>
+                        <td>{{theater.seatAvaliable}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary">
+                                <fa-icon class="small" [icon]="faEye"></fa-icon>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-secondary">
+                                <fa-icon class="small" [icon]="faUserEdit"></fa-icon>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger">
+                                <fa-icon class="small" [icon]="faTrash"></fa-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf='!theatersAvailable'>
+            <p>No theaters present.</p>
+        </div>
+        <div>
+            <!-- create theater modal -->
+            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#createTheaterModal">
+                Add theater
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="createTheaterModal" tabindex="-1" role="dialog"
+                aria-labelledby="createTheaterModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createTheaterModalLongTitle">Add theater</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <app-theater-create (theaterEvent)="setTheatersInDb($event)"></app-theater-create>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

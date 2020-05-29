@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: transparent;">
+    <a class="navbar-brand" href="#">{{brandTitle}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="theater" routerLinkActive="active">Theater</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-link" routerLink="login" routerLinkActive="active"><fa-icon [icon]="faSignInAlt"></fa-icon> Login</a>
+                <a class="nav-link" routerLink="register" routerLinkActive="active"><fa-icon [icon]="faAddressCard"></fa-icon> Register</a>
+            </ul>
+        </form>
+    </div>
+</nav>
