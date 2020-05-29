@@ -9,7 +9,11 @@ export class TheaterService {
   constructor(private http: HttpClient) { }
 
   getAllTheaters(): any {
-    return this.http.get("localhost:4000/theaters");
+    return this.http.get("http://localhost:4000/theaters");
+  }
+
+  createTheater(createrTheaterForm: any): any {
+    return this.http.post("http://localhost:4000/theaters", createrTheaterForm);
   }
 
 }

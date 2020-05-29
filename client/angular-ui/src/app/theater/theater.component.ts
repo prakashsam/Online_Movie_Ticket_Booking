@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TheaterService } from './services/theater.service';
+import { Theater } from './models/theater.model';
+import { faEye, faUserEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-theater',
@@ -8,14 +10,26 @@ import { TheaterService } from './services/theater.service';
 })
 export class TheaterComponent implements OnInit {
 
-  seatsArray: Array<any>[] = [];
+  faEye = faEye;
+  faUserEdit = faUserEdit;
+  faTrash = faTrash;
 
-  constructor( private theaterService: TheaterService) { }
+  theatersInDb: Theater[];
+  theatersAvailable: boolean = false;
 
-  ngOnInit(){
+  constructor(private theaterService: TheaterService) { }
+
+  setTheatersInDb(theaters: any) {
+    this.theatersInDb = theaters;
+  }
+
+  ngOnInit() {
     this.theaterService.getAllTheaters().subscribe(
       (data: any) => {
-        console.log(data);
+        this.theatersInDb = data;
+        if (Object.keys(this.theatersInDb).length) {
+          this.theatersAvailable = true;
+        }
       },
       (err: any) => {
         console.log(err);

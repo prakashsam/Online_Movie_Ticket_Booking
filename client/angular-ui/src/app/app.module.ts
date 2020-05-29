@@ -23,6 +23,8 @@ import { TheaterUpdateComponent } from './theater/components/theater-update/thea
 import { TheaterDeleteComponent } from './theater/components/theater-delete/theater-delete.component';
 import { TheaterCreateComponent } from './theater/components/theater-create/theater-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TheaterDetailComponent } from './theater/components/theater-detail/theater-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TheaterComponent,
     TheaterUpdateComponent,
     TheaterDeleteComponent,
-    TheaterCreateComponent
+    TheaterCreateComponent,
+    TheaterDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     MatSidenavModule,
     MatCheckboxModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   entryComponents: [
   ],
