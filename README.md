@@ -11,3 +11,4 @@ A web application made with React Js with Redux , Angular 9 ,NodeJs, Next Js and
 5. Movie list Module
 6. Seat selection Module
 7. Booking Module 
+8.test
