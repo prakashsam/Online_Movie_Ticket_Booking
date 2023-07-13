@@ -5,7 +5,7 @@ A web application made with React Js with Redux , Angular 9 ,NodeJs, Next Js and
 # Movie Ticket Booking Module
 
 1. Registration Module
-2. Login & logout Module
+ 
 3. City list Module
 4. Theater List Module
 5. Movie list Module
