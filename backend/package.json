@@ -29,7 +29,7 @@
     "@nestjs/platform-express": "^7.0.0",
     "bcrypt": "^4.0.1",
     "helmet": "^3.22.0",
-    "mongoose": "^5.9.10",
+    "mongoose": "^5.13.20",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "reflect-metadata": "^0.1.13",
